@@ -3,8 +3,9 @@ class CreateRoles < ActiveRecord::Migration[8.1]
     create_table :roles do |t|
       t.timestamps
 
-      t.string :name
-      t.references :agent, foreign_key: true
+      t.references :movie, null: false, foreign_key: true
+      t.references :actor, null: false, foreign_key: true
+      t.string :character_name
     end
   end
 end
